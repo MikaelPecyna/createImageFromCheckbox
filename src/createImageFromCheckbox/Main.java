@@ -32,13 +32,14 @@ public class Main extends Application {
         root.setBottom(valid);
         
         valid.setOnAction(e->{
-        	int[][] mat = grid.getMatrix() ;
-    		for(int[] ligne : mat) {
-    			for(int val : ligne) {
-    				System.out.print(val);
-    			}
-    			System.out.println();
-    		}
+//        	int[][] mat = grid.getMatrix() ;
+//    		for(int[] ligne : mat) {
+//    			for(int val : ligne) {
+//    				System.out.print(val);
+//    			}
+//    			System.out.println();
+//    		}
+        	GetImageFromMatrix.genImage(grid.getMatrix(), "test.png");
     	});
         
         
@@ -47,4 +48,6 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World!");
         primaryStage.show();
     }
+
+	
 }
