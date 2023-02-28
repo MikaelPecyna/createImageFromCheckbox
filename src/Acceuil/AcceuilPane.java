@@ -1,17 +1,23 @@
 package Acceuil;
 
+import createImageFromCheckbox.MyPane;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class AcceuilPane extends GridPane {
+	private Stage stage;
 
-	public AcceuilPane()  {
+	public AcceuilPane(Stage stage)  {
 		super();
+		this.stage = stage;
 		
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(16));
@@ -21,21 +27,37 @@ public class AcceuilPane extends GridPane {
         Label instruction = new Label("Entrer la taille de l'image que vous allez créer");
         
         TextField largeur = new TextField();
-        Label larg = new Label("Largeur: (px)");
+        Label larg = new Label("Largeur: (↓)(px)");
         HBox la = new HBox();
         la.getChildren().addAll(larg ,largeur);
         
         TextField longueur = new TextField();
-        Label longu = new Label("Longueur: (px)");
+        Label longu = new Label("Longueur: (→)(px)");
         HBox lo = new HBox();
         lo.getChildren().addAll(longu, longueur);
         
+        
+        Button lancer = new Button("Démarrer !");
         VBox box = new VBox();
         
+        lancer.setOnAction(e->{
+        	int x = Integer.parseInt(largeur.getText()); 
+//        	System.out.println("X : "+Integer.parseInt(largeur.getText()) + " Type: " );
+//        	System.out.println("Y : "+Integer.parseInt(longueur.getText()));
+//        	System.out.println("Y : "+longueur.getText());
+        	int y = Integer.parseInt(longueur.getText()); 
+        	showMyPane(x, y);
+        });
         
-        
-        box.getChildren().addAll(instruction, la, lo);
+        box.getChildren().addAll(instruction, la, lo, lancer);
         this.getChildren().add(box);
 	}
+	
+	private void showMyPane(int x, int y) {
+        MyPane programScreen = new MyPane(x, y);
+        Scene programScene = new Scene(programScreen, 300, 300);
+        stage.setScene(programScene);
+        stage.show();
 
+	}
 }

@@ -1,6 +1,7 @@
 package Launch;
  
 import Acceuil.AcceuilPane;
+import createImageFromCheckbox.MyPane;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,8 +20,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-    	AcceuilPane root = new AcceuilPane();
+    	AcceuilPane root = new AcceuilPane(primaryStage);
         
+ 
         
         
         primaryStage.setScene(new Scene(root, 300, 250));

@@ -15,12 +15,12 @@ public class GridPaneWithCheckbox extends GridPane {
 		this.largeur = largeur; 
 		this.longueur= longueur; 
 		
-		this.cbMatrix =  new CheckBox[largeur][longueur];
+		this.cbMatrix =  new CheckBox[this.largeur+1][this.longueur+1];
 		
 		for(int y = 0; y<largeur; y++) {
-			for(int x = 0; x<largeur; x++) {
-				cbMatrix[x][y] = new CheckBox();
-				this.add(cbMatrix[x][y], x, y);
+			for(int x = 0; x<longueur; x++) {
+				cbMatrix[y][x] = new CheckBox();
+				this.add(cbMatrix[y][x], x, y);
 			}
 		}
 			
@@ -30,8 +30,8 @@ public class GridPaneWithCheckbox extends GridPane {
 		
 		for(int y = 0; y<largeur; y++) {
 			for(int x = 0; x<largeur; x++) {
-				if(cbMatrix[x][y].isSelected()) {
-					intMatrix[x][y] = 1; 
+				if(cbMatrix[y][x].isSelected()) {
+					intMatrix[y][x] = 1; 
 				}	
 			}
 		}
