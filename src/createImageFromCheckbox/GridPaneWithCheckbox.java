@@ -29,7 +29,7 @@ public class GridPaneWithCheckbox extends GridPane {
 		this.intMatrix = new int[this.largeur][this.longueur]; 
 		
 		for(int y = 0; y<largeur; y++) {
-			for(int x = 0; x<largeur; x++) {
+			for(int x = 0; x<longueur; x++) {
 				if(cbMatrix[y][x].isSelected()) {
 					intMatrix[y][x] = 1; 
 				}	

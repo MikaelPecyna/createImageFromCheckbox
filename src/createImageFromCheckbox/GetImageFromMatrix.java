@@ -19,7 +19,7 @@ public class GetImageFromMatrix {
 
 	    for (int y = 0; y < height; y++) {
 	      for (int x = 0; x < width; x++) {
-	        if (matrix[x][y] == 1) {
+	        if (matrix[y][x] == 1) {
 	          g.setColor(Color.BLACK);
 	        } else {
 	          g.setColor(Color.WHITE);
