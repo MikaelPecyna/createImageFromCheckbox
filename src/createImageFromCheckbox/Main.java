@@ -19,6 +19,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         
         
+    	
         Button valid = new Button("Enregistrer");
     	valid.setAlignment(Pos.CENTER_RIGHT);
     	
@@ -29,18 +30,15 @@ public class Main extends Application {
         
         BorderPane root = new BorderPane(); 
         root.setCenter(grid);
-        root.setBottom(valid);
+//        
         
         valid.setOnAction(e->{
-//        	int[][] mat = grid.getMatrix() ;
-//    		for(int[] ligne : mat) {
-//    			for(int val : ligne) {
-//    				System.out.print(val);
-//    			}
-//    			System.out.println();
-//    		}
         	GetImageFromMatrix.genImage(grid.getMatrix(), "test.png");
     	});
+        
+        BottomOfPane bot = new BottomOfPane(grid);
+        
+        root.setBottom(bot);
         
         
         
