@@ -61,7 +61,7 @@ public class AcceuilPane extends GridPane {
 	
 	private void showMyPane(int x, int y) {
         MyPane programScreen = new MyPane(x, y, stage);
-        Scene programScene = new Scene(programScreen, x*20 + 15, y*20+ 40);
+        Scene programScene = new Scene(programScreen, x*20 + 50, y*20+ 80);
         stage.setScene(programScene);
         stage.show();
 

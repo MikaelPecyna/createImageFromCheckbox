@@ -35,6 +35,7 @@ public class GridPaneWithCheckbox extends GridPane {
 				int tmpInt = 0; 
 				tmp.setMinSize(1, 1);
 //				tmp.setPrefSize(15, 15);
+				
 				tmp.setMinSize(20, 20);
 				tmp.setStyle("-fx-border-color: black;");
 				
