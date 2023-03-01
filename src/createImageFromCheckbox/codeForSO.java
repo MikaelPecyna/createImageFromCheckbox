@@ -3,12 +3,11 @@ package createImageFromCheckbox;
 import javafx.event.EventHandler;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.GridPane;
 
-public class GridPaneWithCheckbox extends GridPane {
+public class codeForSO extends GridPane {
 	private int largeur; 
 	private int longueur; 
 	private Label[][] cbMatrix; 
@@ -16,7 +15,7 @@ public class GridPaneWithCheckbox extends GridPane {
 	private int yCoord;
 	private int[][] colorMatrix; 
 
-	public GridPaneWithCheckbox(int largeur, int longueur) {
+	public codeForSO(int largeur, int longueur) {
 		super();
 		
 		this.largeur = largeur; 
@@ -51,8 +50,6 @@ public class GridPaneWithCheckbox extends GridPane {
 					}
 				});
 				
-				
-				
 				tmp.setOnMouseClicked(e-> {
 					System.out.println(this.yCoord + ";" + this.xCoord);
 					if(colorMatrix[GridPane.getRowIndex(tmp)][GridPane.getColumnIndex(tmp)] == 1) {
@@ -65,22 +62,7 @@ public class GridPaneWithCheckbox extends GridPane {
 					
 				});
 				
-				tmp.addEventFilter(MouseEvent.MOUSE_ENTERED, 
-						new EventHandler<MouseEvent>() {
-						public void handle(MouseEvent ev) {
-							if(ev.isControlDown()) {
-							if(colorMatrix[GridPane.getRowIndex(tmp)][GridPane.getColumnIndex(tmp)] == 1) {
-								tmp.setStyle("-fx-background-color: white");
-								colorMatrix[GridPane.getRowIndex(tmp)][GridPane.getColumnIndex(tmp)] = 0;
-							}else {
-								colorMatrix[GridPane.getRowIndex(tmp)][GridPane.getColumnIndex(tmp)] = 1;
-								tmp.setStyle("-fx-background-color: black");
-							}							
-								
-						
-							}
-						};
-                });
+				
 				
 				
 
