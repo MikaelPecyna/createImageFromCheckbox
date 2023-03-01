@@ -20,6 +20,7 @@ public class AcceuilPane extends GridPane {
 		super();
 		this.stage = stage;
 		
+		
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(16));
         this.setHgap(16);
@@ -59,8 +60,8 @@ public class AcceuilPane extends GridPane {
 	}
 	
 	private void showMyPane(int x, int y) {
-        MyPane programScreen = new MyPane(x, y);
-        Scene programScene = new Scene(programScreen, 300, 300);
+        MyPane programScreen = new MyPane(x, y, stage);
+        Scene programScene = new Scene(programScreen, x*20 + 15, y*20+ 40);
         stage.setScene(programScene);
         stage.show();
 
