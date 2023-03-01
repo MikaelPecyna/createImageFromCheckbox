@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -42,12 +43,16 @@ public class AcceuilPane extends GridPane {
         
         lancer.setOnAction(e->{
         	int x = Integer.parseInt(largeur.getText()); 
-//        	System.out.println("X : "+Integer.parseInt(largeur.getText()) + " Type: " );
-//        	System.out.println("Y : "+Integer.parseInt(longueur.getText()));
-//        	System.out.println("Y : "+longueur.getText());
         	int y = Integer.parseInt(longueur.getText()); 
         	showMyPane(x, y);
         });
+        
+        this.setOnKeyPressed(e->{
+        	if(e.getCode() == KeyCode.ENTER) {
+        	int x = Integer.parseInt(largeur.getText()); 
+        	int y = Integer.parseInt(longueur.getText()); 
+        	showMyPane(x, y);
+        	}});
         
         box.getChildren().addAll(instruction, la, lo, lancer);
         this.getChildren().add(box);
